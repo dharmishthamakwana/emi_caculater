@@ -1,15 +1,13 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class EMIcalc extends StatefulWidget {
-  const EMIcalc({Key? key}) : super(key: key);
+class emicalc extends StatefulWidget {
+  const emicalc({Key? key}) : super(key: key);
 
   @override
-  State<EMIcalc> createState() => _EMIcalcState();
+  State<emicalc> createState() => emicalcState();
 }
-
-class _EMIcalcState extends State<EMIcalc> {
+class emicalcState extends State<emicalc> {
   double loanAmount = 100000;
   double loanInterest = 5;
   double loanYears = 5;
@@ -26,9 +24,9 @@ class _EMIcalcState extends State<EMIcalc> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF2C3333),
-          leading: Icon(Icons.all_inclusive),
-          title: Text("EMI calc",
+          backgroundColor: const Color(0xFF2C3333),
+          leading: const Icon(Icons.all_inclusive),
+          title: const Text("EMI calc",
               style: TextStyle(color: Color(0xFFE7F6F2), letterSpacing: 2)),
         ),
         body: Stack(
@@ -37,7 +35,7 @@ class _EMIcalcState extends State<EMIcalc> {
             Container(
               height: 300,
               width: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 boxShadow: [
                   BoxShadow(
                       color: Colors.black12, blurRadius: 5, spreadRadius: 5),
@@ -47,7 +45,7 @@ class _EMIcalcState extends State<EMIcalc> {
             ),
 
             // per month emi text / container
-            Container(
+            SizedBox(
               height: 150,
               width: double.infinity,
               //color: Colors.white,
@@ -60,33 +58,33 @@ class _EMIcalcState extends State<EMIcalc> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // per month emi
-                      Container(
+                      SizedBox(
                         height: 100,
                         width: 200,
                         //color: Colors.white,
                         child: Column(
                           children: [
-                            Text("Your EMI is",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 10,),),
-                            SizedBox(height: 4,),
-                            Text("\$ $emiPerMonth",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 40,fontWeight: FontWeight.bold),),
-                            SizedBox(height: 4,),
-                            Text("Per month",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 10,),),
+                            const Text("Your EMI is",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 10,),),
+                            const SizedBox(height: 4,),
+                            Text("\$ $emiPerMonth",style: const TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 40,fontWeight: FontWeight.bold),),
+                            const SizedBox(height: 4,),
+                            const Text("Per month",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 10,),),
                           ],
                         ),
                       ),
 
                       // per month interest
-                      Container(
+                      SizedBox(
                         height: 100,
                         width: 200,
                         //color: Colors.white,
                         child: Column(
                           children: [
-                            Text("Your Interest",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 10,),),
-                            SizedBox(height: 4,),
-                            Text("\$ $interestPerMonth",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 40,fontWeight: FontWeight.bold),),
-                            SizedBox(height: 4,),
-                            Text("Per month",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 10,),),
+                            const Text("Your Interest",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 10,),),
+                            const SizedBox(height: 4,),
+                            Text("\$ $interestPerMonth",style: const TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 40,fontWeight: FontWeight.bold),),
+                            const SizedBox(height: 4,),
+                            const Text("Per month",style: TextStyle(color: Color(0xFFE7F6F2),letterSpacing: 2,fontSize: 10,),),
                           ],
                         ),
                       ),
@@ -104,13 +102,13 @@ class _EMIcalcState extends State<EMIcalc> {
             Center(
               child: Padding(
                 padding:
-                EdgeInsets.only(left: 40, right: 40, bottom: 25, top: 100),
+                const EdgeInsets.only(left: 40, right: 40, bottom: 25, top: 100),
                 child: Align(
                   alignment: Alignment.center,
                   child: Container(
                     height: 450,
                     width: double.infinity,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       boxShadow: [
                         BoxShadow(
                             color: Colors.black12,
@@ -122,23 +120,23 @@ class _EMIcalcState extends State<EMIcalc> {
                     ),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
 
                         // loan amount slider
                         Row(
                           children: [
-                            Padding(
+                            const Padding(
                               padding: EdgeInsets.only(left: 25, top: 20),
                               child: Text("Loan Amount",
                                   style: TextStyle(
                                       letterSpacing: 2, fontSize: 15)),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 180, top: 20),
+                              padding: const EdgeInsets.only(left: 180, top: 20),
                               child: Text("\$ $loanAmount",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       letterSpacing: 2, fontSize: 15)),
                             ),
                           ],
@@ -146,8 +144,8 @@ class _EMIcalcState extends State<EMIcalc> {
                         Slider(
                           max: 1000000,
                           divisions: 10,
-                          activeColor: Color(0xFF2C3333),
-                          inactiveColor: Color(0xFF395B50),
+                          activeColor: const Color(0xFF2C3333),
+                          inactiveColor: const Color(0xFF395B50),
                           value: loanAmount,
                           onChanged: (value) {
                             setState(() {
@@ -159,16 +157,16 @@ class _EMIcalcState extends State<EMIcalc> {
                         // interest slider
                         Row(
                           children: [
-                            Padding(
+                            const Padding(
                               padding: EdgeInsets.only(left: 25, top: 20),
                               child: Text("Loan Interest",
                                   style: TextStyle(
                                       letterSpacing: 2, fontSize: 15)),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 225, top: 20),
+                              padding: const EdgeInsets.only(left: 225, top: 20),
                               child: Text("$loanInterest%",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       letterSpacing: 2, fontSize: 15)),
                             ),
                           ],
@@ -176,8 +174,8 @@ class _EMIcalcState extends State<EMIcalc> {
                         Slider(
                           max: 15,
                           divisions: 15,
-                          activeColor: Color(0xFF2C3333),
-                          inactiveColor: Color(0xFF395B50),
+                          activeColor: const Color(0xFF2C3333),
+                          inactiveColor: const Color(0xFF395B50),
                           value: loanInterest,
                           onChanged: (value) {
                             setState(() {
@@ -190,16 +188,16 @@ class _EMIcalcState extends State<EMIcalc> {
                         // loan amount slider
                         Row(
                           children: [
-                            Padding(
+                            const Padding(
                               padding: EdgeInsets.only(left: 25, top: 20),
                               child: Text("Total Years",
                                   style: TextStyle(
                                       letterSpacing: 2, fontSize: 15)),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 200, top: 20),
+                              padding: const EdgeInsets.only(left: 200, top: 20),
                               child: Text("$loanYears Years",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       letterSpacing: 2, fontSize: 15)),
                             ),
                           ],
@@ -207,8 +205,8 @@ class _EMIcalcState extends State<EMIcalc> {
                         Slider(
                           max: 10,
                           divisions: 10,
-                          activeColor: Color(0xFF2C3333),
-                          inactiveColor: Color(0xFF395B50),
+                          activeColor: const Color(0xFF2C3333),
+                          inactiveColor: const Color(0xFF395B50),
                           value: loanYears,
                           onChanged: (value) {
                             setState(() {
@@ -217,7 +215,7 @@ class _EMIcalcState extends State<EMIcalc> {
                           },
                         ),
 
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         // row for clear and calculate
@@ -238,7 +236,7 @@ class _EMIcalcState extends State<EMIcalc> {
                                 height: 55,
                                 width: 150,
                                 decoration: BoxDecoration(
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                           color: Color(0xFF2C3333),
                                           blurRadius: 1,
@@ -248,13 +246,13 @@ class _EMIcalcState extends State<EMIcalc> {
                                           blurRadius: 1,
                                           spreadRadius: 1),
                                     ],
-                                    color: Color(0xFF2C3333),
+                                    color: const Color(0xFF2C3333),
                                     borderRadius: BorderRadius.circular(10),
-                                    gradient: LinearGradient(colors: [
+                                    gradient: const LinearGradient(colors: [
                                       Color(0xFF2C3333),
                                       Color(0xFF395B64),
                                     ])),
-                                child: Center(
+                                child: const Center(
                                   child: Text("Clear",
                                       style: TextStyle(
                                         color: Color(0xFFE7F6F2),
@@ -265,7 +263,7 @@ class _EMIcalcState extends State<EMIcalc> {
                               ),
                             ),
 
-                            SizedBox(
+                            const SizedBox(
                               width: 50,
                             ),
 
@@ -286,7 +284,7 @@ class _EMIcalcState extends State<EMIcalc> {
                                 height: 55,
                                 width: 150,
                                 decoration: BoxDecoration(
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                           color: Color(0xFF2C3333),
                                           blurRadius: 1,
@@ -297,11 +295,11 @@ class _EMIcalcState extends State<EMIcalc> {
                                           spreadRadius: 1),
                                     ],
                                     borderRadius: BorderRadius.circular(10),
-                                    gradient: LinearGradient(colors: [
+                                    gradient: const LinearGradient(colors: [
                                       Color(0xFF2C3333),
                                       Color(0xFF395B64),
                                     ])),
-                                child: Center(
+                                child: const Center(
                                   child: Text("Count",
                                       style: TextStyle(
                                         color: Color(0xFFE7F6F2),
