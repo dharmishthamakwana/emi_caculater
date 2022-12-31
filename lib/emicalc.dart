@@ -8,9 +8,9 @@ class emicalc extends StatefulWidget {
   State<emicalc> createState() => emicalcState();
 }
 class emicalcState extends State<emicalc> {
-  double loanAmount = 100000;
-  double loanInterest = 5;
-  double loanYears = 5;
+  double loanAmount = 0;
+  double loanInterest = 0;
+  double loanYears = 0;
 
   double totalInterest = 0;
   double perMonthEMI = 0;
